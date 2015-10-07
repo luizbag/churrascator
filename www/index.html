@@ -31,36 +31,159 @@ under the License.
         <div class="app">
             <div class="navbar-fixed">
                 <nav>
-                    <div class="nav-wrapper teal darken-2">
+                    <div class="nav-wrapper purple darken-4">
                         <a href="#" class="brand-logo center">Churrascator</a>
                     </div>
                 </nav>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="n_homens" ng-model="n_homens" type="number">
-                    <label for="n_homens">Homens</label>
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <input id="n_homens" ng-model="n_homens" type="number">
+                        <label for="n_homens">Homens</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input id="n_mulheres" ng-model="n_mulheres" type="number">
+                        <label for="n_mulheres">Mulheres</label>
+                    </div>
                 </div>
-
-                <div class="input-field col s12">
-                    <input id="n_mulheres" ng-model="n_mulheres" type="number">
-                    <label for="n_mulheres">Mulheres</label>
-                </div>
-
-                <div class="col s12">
-                    <p>Linguiça: {{ ((n_homens*0.25) + (n_mulheres*0.20))/1 }} kg</p>
-                </div>
-                <div class="col s12">
-                    <p>Carne: {{ ((n_homens*0.32) + (n_mulheres*0.3))/1 }} kg</p>
-                </div>
-                <div class="col s12">
-                    <p>Cerveja: {{ ((n_homens*6) + (n_mulheres*4))/1 }} latas </p>
-                </div>
-                <div class="col s12">
-                    <p>Refrigerante: {{ ((n_homens*0.3) + (n_mulheres*0.5))/2 }} garrafas 2l </p>
-                </div>
-                <div class="col s12">
-                    <p>Pães: {{ ((n_homens*2) + (n_mulheres*1.5))/1 }} unidades </p>
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Linguiça</span>
+                                <p>{{ ((n_homens*0.25) + (n_mulheres*0.20))/1 | number:2}}kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Carne</span>
+                                <p>{{ carne = ((n_homens*0.32) + (n_mulheres*0.3))/1 | number:2}}kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Cerveja</span>
+                                <p>{{ ((n_homens*6) + (n_mulheres*4))/1 | number:0 }} latas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Refrigerante</span>
+                                <p>{{ ((n_homens*0.3) + (n_mulheres*0.5))/2 | number:0 }} garrafas 2l</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Pães</span>
+                                <p>{{ ((n_homens*2) + (n_mulheres*1.5))/1 | number:0 }} unidades</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Farofa Temperada</span>
+                                <p>{{ ((n_homens*0.03) + (n_mulheres*0.01))/1 + 1 | number:0 }} unidades</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Carvão</span>
+                                <p>{{ carne/7 + 1 | number:0 }} sacos de 2,5kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Guardanapos</span>
+                                <p>{{ (n_homens + n_mulheres)/7 + 1 | number:0 }} pacotes com 50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Álcool</span>
+                                <p>1 litro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Pano de prato</span>
+                                <p>{{ (n_homens + n_mulheres)/10 + 1 | number:0 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Pratos</span>
+                                <p>{{ (n_homens + n_mulheres)/10 + 3 | number:0 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Garfos</span>
+                                <p>{{ (n_homens + n_mulheres)/10 + 2 | number:0 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Copos descartáveis</span>
+                                <p>{{ ((n_homens*1.2) + (n_mulheres*1.5))/1 | number:0 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Sal grosso</span>
+                                <p>{{ carne/30 + 1 | number:0 }} kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Limão</span>
+                                <p>{{ (n_homens + n_mulheres)/2 + 3 | number:0 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Pinga/Vodka</span>
+                                <p>{{ pinga = (n_homens + n_mulheres)/20 + 1 | number:0 }} litros</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card red darken-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Açúcar</span>
+                                <p>{{ pinga/5 + 1 | number:0 }} kg</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
