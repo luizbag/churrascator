@@ -27,7 +27,7 @@ under the License.
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Churrascator</title>
     </head>
-    <body>
+    <body ng-app ng-init="n_homens=0; n_mulheres=0">
         <div class="app">
             <div class="navbar-fixed">
                 <nav>
@@ -36,8 +36,36 @@ under the License.
                     </div>
                 </nav>
             </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="n_homens" ng-model="n_homens" type="number">
+                    <label for="n_homens">Homens</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <input id="n_mulheres" ng-model="n_mulheres" type="number">
+                    <label for="n_mulheres">Mulheres</label>
+                </div>
+
+                <div class="col s12">
+                    <p>Linguiça: {{ ((n_homens*0.25) + (n_mulheres*0.20))/1 }} kg</p>
+                </div>
+                <div class="col s12">
+                    <p>Carne: {{ ((n_homens*0.32) + (n_mulheres*0.3))/1 }} kg</p>
+                </div>
+                <div class="col s12">
+                    <p>Cerveja: {{ ((n_homens*6) + (n_mulheres*4))/1 }} latas </p>
+                </div>
+                <div class="col s12">
+                    <p>Refrigerante: {{ ((n_homens*0.3) + (n_mulheres*0.5))/2 }} garrafas 2l </p>
+                </div>
+                <div class="col s12">
+                    <p>Pães: {{ ((n_homens*2) + (n_mulheres*1.5))/1 }} unidades </p>
+                </div>
+            </div>
         </div>
         <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
